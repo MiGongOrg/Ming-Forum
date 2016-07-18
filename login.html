@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="src/css/login.css">
+</head>
+<body>
+	<div class="container">
+		<header></header>
+			<div class="loginBox">
+				<h2>注册 / 登录</h2>
+				<ul>
+					<li><input type="text" id="username" placeholder="邮箱"></li>
+					<li><input type="password" id="password" placeholder="密码"></li>
+					<li><button id="registerBtn">注册</button><button id="loginBtn">登录</button></li>
+					<li><a href="javascript:;" id="forgetPasswordBtn">忘记密码？</a></li>
+					<li class="resetPasswordBox"><input type="text" id="resetPassword" placeholder="输入邮箱"></li>
+					<li class="resetPasswordBox"><button id="resetPasswordBtn">重置密码</button></li>
+					<li class="error"><p></p></li>
+					<li><h2>使用其它方式注册/登录</h2></li>
+					<li class="three">
+						<span>QQ</span>
+						<span>微博</span>
+						<span>微信</span>
+					</li>
+				</ul>
+			</div>
+		<footer>
+			<p>Ming</p>
+			<p><button id="logOut">登出</button></p>
+		</footer>
+	</div>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdn.wilddog.com/js/client/current/wilddog.js" ></script>
+	<script type="text/javascript" src="src/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* about */
+.about div,.clearPaddingLR{
+	padding-left: 0;
+	padding-right: 0;
+}
+.clearPaddingL{
+	padding-left: 0;
+}
+.clearPaddingR{
+	padding-right: 0;
+}
+.about input,.about span,.about button,.about a{
+	border-radius: 0;
+}
+.userId > span,.userId > input{
+	border-bottom-style: none;
+}
+.userMoney > input{
+	border-right-style: none;
+}
+.everydayBtn{
+  margin-top: 15px;
+}
+.changeUserBtn,.logoutBtn{
+	border-top-style: none;
+}
+.logoutBtn{
+	border-left-style: none;
+}
+/* about end */
+/* login */
+#error,.resetPasswordBox{
+	display: none;
+}

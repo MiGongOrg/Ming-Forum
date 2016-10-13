@@ -1,5 +1,4 @@
 {{~ it.data:obj:i }}
-{{console.log(it.data);}}
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><a href="/#posts/{{= obj['id']}}" title="{{= obj['title']}}">{{= obj['title']}}</a></h3>
@@ -15,7 +14,7 @@
   		<span class="glyphicon glyphicon-time" aria-hidden="true"></span> <span class="">{{= Ming.newDate(obj['postTime'])}}</span>
   	</div>
   	<div class="col-md-4 col-sm-4 col-xs-6 text-right">
-  		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <span class="badge">{{= obj['comment'] ? obj['comment'] : '0'}}</span>
+      <span class="badge">{{= obj['comment'] ? obj['comment'] : '0'}}</span>
   	</div>
   </div>
 </div>

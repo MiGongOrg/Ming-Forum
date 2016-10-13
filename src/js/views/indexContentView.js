@@ -16,15 +16,14 @@ define([
 			initialize: function() {
 
 				this.oPosts = Ming.collections['posts'];
-				this.oPosts.bind('reset',this.render, this);
+				this.oPosts.bind('reset', this.render, this);
 
 			},
 			render: function() {
-				//进行数据处理
+				// 数据处理
 				var 
 				arry = this.oPosts.toJSON(),
-				obj = arry[0];
-				// console.log(obj[0]);
+				obj  = arry[0];
 				function transform(obj){
 			    var arr = [];
 			    for(var item in obj){
@@ -34,7 +33,9 @@ define([
 			    return arr;
 				}
 
-				data = transform(obj);
+				dataList = transform(obj);
+				// 按照发布时间进行倒序排序
+				data = _.sortBy(dataList, function(a){ return -a.postTime });
 
 				this.$el.html(this.template.indexContent({
 					data: data

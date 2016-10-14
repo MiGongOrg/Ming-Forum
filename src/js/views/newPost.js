@@ -26,7 +26,7 @@ define([
 				oNewPostBtn     = $('#newPostBtn'),
 				oNewPost        = Ming.ref.child('posts'),
 				oTimeNow        = parseInt(new Date().getTime() / 1000);
-				//禁用按钮
+				// 禁用按钮
 				oNewPostBtn.prop('disabled', true);
 				
 				// 添加自增长ID，统计 post 数量
@@ -39,8 +39,8 @@ define([
 					} else if(committed) {
 						// 获取自增长id
 						var id = ss.val();
-						//push 数据
-						oNewPost.push({
+						// push 数据
+						oNewPost.child('postContent').push({
 							id: id,
 							user_id: Ming.uid,
 							postTime: oTimeNow,

@@ -1,4 +1,4 @@
-{{? !it.data[0].user_id}}
+{{? !it.data[0].user_id }}
 <li><a href="#login">注册 / 登录</a></li>
 {{??}}
 <li class="dropdown">

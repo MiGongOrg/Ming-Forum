@@ -28,29 +28,40 @@ define([
 				oTimeNow        = parseInt(new Date().getTime() / 1000);
 				//禁用按钮
 				oNewPostBtn.prop('disabled', true);
-
-				//push 数据
-				oNewPost.push({
-					user_id: Ming.uid,
-					postTime: oTimeNow,
-					title: oNewPostTitle,
-					content: oNewPostContent
-				},function(err) {
-					var oError = $('#error');
-					if(err === null){
-						Ming.showError(oError, 'glyphicon-ok', 'alert-success', '发布成功');
-						oNewPostBtn.prop('disabled', false);
-						setTimeout(function() {
-							window.location.href = '';
-						},1000);
-
-					} else {
-						if (err === 'PERMISSION_DENIED') {}
-						Ming.showError(oError, 'glyphicon-exclamation-sign', 'alert-danger', err);
-						oNewPostBtn.prop('disabled', false);
+				
+				// 添加自增长ID，统计 post 数量
+				oNewPost.child('postSize').transaction(function(sizeVal) {
+					var newVal = (sizeVal || 0) + 1;
+					return newVal;
+				}, function(err, committed, ss) {
+					if (err) {
+						console.log(err);
+					} else if(committed) {
+						// 获取自增长id
+						var id = ss.val();
+						//push 数据
+						oNewPost.push({
+							id: id,
+							user_id: Ming.uid,
+							postTime: oTimeNow,
+							title: oNewPostTitle,
+							content: oNewPostContent
+						}, function(err) {
+							var oError = $('#error');
+							if(err === null){
+								Ming.showError(oError, 'glyphicon-ok', 'alert-success', '发布成功');
+								setTimeout(function() {
+									oNewPostBtn.prop('disabled', false);
+									window.location.href = '';
+								}, 500);
+							} else {
+								if (err === 'PERMISSION_DENIED') {}
+								Ming.showError(oError, 'glyphicon-exclamation-sign', 'alert-danger', err);
+								oNewPostBtn.prop('disabled', false);
+							}
+						});
 					}
 				});
-				
 			}
 		});
 });

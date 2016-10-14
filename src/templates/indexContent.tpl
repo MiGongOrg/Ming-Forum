@@ -19,3 +19,9 @@
   </div>
 </div>
 {{~}}
+<nav>
+  <ul class="pager">
+    <li class="previous"><a href="javascript:;">Prev</a></li>
+    <li class="next"><a href="javascript:;">Next</a></li>
+  </ul>
+</nav>

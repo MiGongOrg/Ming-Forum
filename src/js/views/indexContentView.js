@@ -11,13 +11,12 @@ define([
 				indexContent: doT.template(TplIndexContent)
 			},
 			events: {
-
+				'click .pager .previous': 'eventPrev',
+				'click .pager .next': 'eventNext'
 			},
 			initialize: function() {
-
 				this.oPosts = Ming.collections['posts'];
 				this.oPosts.bind('reset', this.render, this);
-
 			},
 			render: function() {
 				// 数据处理
@@ -40,6 +39,14 @@ define([
 				this.$el.html(this.template.indexContent({
 					data: data
 				}));
+			},
+			// 上一页
+			eventPrev: function() {
+				console.log('点击了上一页');
+			},
+			// 下一页
+			eventNext: function() {
+				console.log('点击了下一页');
 			}
 		});
 });

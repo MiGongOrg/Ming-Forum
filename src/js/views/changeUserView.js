@@ -31,9 +31,6 @@ define([
 				console.log('点击了修改按钮');
 			},
 			saveUser: function() {
-
-				console.log('保存了用户');
-
 				var 
 				uid           = Ming.userId,
 				oUser         = Ming.ref.child('users'),
@@ -49,12 +46,13 @@ define([
 				},
 				function(err){
 					if (err === null) {
-						console.log('保存成功');
+						oError = $('#error', this.$el);
+						Ming.showError(oError, 'glyphicon-ok', 'alert-success', '用户信息修改成功');
 					} else {
-						console.log(err);
+						Ming.showError(oError, 'glyphicon-ok', 'alert-danger', '用户信息修改失败' + err );
+						console.error(err);
 					}
 				});
-
 			},
 			//header User
 			renderHeaderUser: function() {

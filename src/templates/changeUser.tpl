@@ -51,4 +51,9 @@
 	<div class="form-group">
 		<button class="btn btn-default btn-block" id="saveUserBtn">保存</button>
 	</div>
+	<!-- 信息提示 -->
+	<div class="alert" id="error" role="alert">
+		<span class="glyphicon" aria-hidden="true"></span>
+		<span class="errorContent"></span>
+	</div>
 </div>

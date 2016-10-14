@@ -10,14 +10,14 @@
 	<label for="newPostContent">内容</label>
 		<textarea class="form-control" id="newPostContent" rows="5"></textarea>
 	</div>
-	<!-- 信息提示 -->
-	<div class="alert" id="error" role="alert">
-		<span class="glyphicon" aria-hidden="true"></span>
-		<span class="errorContent"></span>
-	</div>
 </div>
 <div class="col-sm-12 col-sx-12">
 	<div class="form-group">
 		<button class="btn btn-default btn-block" id="newPostBtn">发布</button>
+	</div>
+	<!-- 信息提示 -->
+	<div class="alert" id="error" role="alert">
+		<span class="glyphicon" aria-hidden="true"></span>
+		<span class="errorContent"></span>
 	</div>
 </div>
